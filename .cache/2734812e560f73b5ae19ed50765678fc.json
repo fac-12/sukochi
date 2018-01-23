@@ -1,0 +1,1 @@
+{"dependencies":[{"name":"_css_loader"}],"generated":{"css":"body {\n  display: flex;\n  justify-content: center;\n}\n\n.creature-img {\n  width: 20rem;\n  height: auto;\n}\n","js":"\n        var reloadCSS = require('_css_loader');\n        module.hot.dispose(reloadCSS);\n        module.hot.accept(reloadCSS);\n      "},"hash":"9c23f038a41c7cd54950ddecee837c9b"}
