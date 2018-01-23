@@ -1,0 +1,1 @@
+{"dependencies":[],"generated":{"js":"\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nvar counter = exports.counter = function counter(count, time) {\n  var start = Date.now();\n  setTimeOut(function () {\n    var timePassed = Date.now() - start;\n    return count - timePassed;\n  }, time);\n};"},"hash":"8ceeadb6c6bb3e0e9244376576fb4457"}
