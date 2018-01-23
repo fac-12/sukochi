@@ -1,0 +1,9 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.creature-img {
+  width: 20rem;
+  height: auto;
+}
