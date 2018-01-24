@@ -1,0 +1,30 @@
+.healthDiv {
+	width: 50vw;
+	display: flex;
+	flex-direction: column;
+}
+
+.healthText {
+	width: 45vw;
+	align-self: center;
+	font-size: 1rem;
+}
+
+.healthButton {
+	width: fit-content;
+	height: 5vh;
+	text-align: center;
+	align-self: center;
+	background-color: #ffd633;
+	margin-top: 1vh;
+}
+
+.healthGif {
+	margin-top: 2vh;
+	align-self: center;
+	height: 30vh;
+}
+
+.null {
+	display: none;
+}
