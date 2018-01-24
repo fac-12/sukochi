@@ -1,30 +1,50 @@
 import React from "react";
 import { counter } from "../utils/counter";
+import "./style.css";
 
 export class HealthBar extends React.Component {
   state = {
     count: 100,
-    time: 0,
-    frequency: 1000
+    message: null,
+    imgUrl: null
   };
+
+  add = () => {
+
+    if(isNaN(this.state.count)) {
+     this.setState({ message: "It's too late." })
+    }
+    else {
+     this.setState({count: this.state.count + 5})
+    }
+  }
+
   componentDidMount() {
- this.setState((prevState, props) => {
-            if (prevState.count === 0) {
-              this.setState({ count: "You're dead!" });
-            } else {
-              const startTime = Date.now();
-              setInterval(() => {
-                const timePassed = Date.now() - startTime;
-                const newCount = Math.round(prevState.count - timePassed/1000);
+    this.setState((prevState, props) => { 
+      const startTime = Date.now();
+             this.countdown = setInterval(() => {
+                let newCount = this.state.count - 1;
+                if (newCount < 0) {
+                  newCount = "I'm dead!";
+                  clearInterval(this.countdown);
+                }
+                if (newCount >= 120) {
+                  newCount = "I've exploded from eating too much! 💥";
+                  this.setState({imgUrl : "https://media1.tenor.com/images/6732bf96f2e1f7453040259944bc0c5e/tenor.gif?itemid=3683672"})
+                  clearInterval(this.countdown);
+                }
+
                 this.setState({ count: newCount });
-                console.log(this.state.count)
-              }, 1000);
-            }
-            }
-            )
+              }, 500);
+    })
   }
 
   render() {
-    return <div>Health: {this.state.count}</div>;
+    const img = this.state.imgUrl;
+    return <div className="healthDiv">
+    <div className="healthText">Health: {this.state.count}</div>
+    <button className="healthButton" onClick = {this.add}>{this.state.message ? this.state.message : "Feed me!"}</button>
+    {img ? <img className="healthGif" src={img} /> : <div className="null"></div>}
+    </div>
   }
 }

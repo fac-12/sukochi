@@ -1,0 +1,32 @@
+.happyDiv {
+	width: 50vw;
+	display: flex;
+	flex-direction: column;
+}
+
+.happyText {
+	align-self: center;
+	width: 45vw;
+	font-size: 1.2rem;
+
+}
+
+.happyButton {
+	background-color: #ffd633;
+	width: fit-content;
+	height: 5vh;
+	text-align: center;
+	align-self: center;
+	margin-top: 1vh;
+
+}
+
+.happyGif {
+	margin-top: 2vh;
+	height: 30vh;
+	align-self: center;
+}
+
+.null {
+	display: none;
+}
